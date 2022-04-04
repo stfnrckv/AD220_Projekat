@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 [RequireComponent(typeof(PlayerMover))]
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Interactable currentFocus;// = new Interactable();
     public GameObject inventoryPanel;
     bool invShow = false;
+    public TMP_Text instructionTxt;
 
     public LayerMask moveMask;
     Camera cam;
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("i"))
         {
+            instructionTxt.text = "";
             invShow = !invShow;
             inventoryPanel.SetActive(invShow);
         }
